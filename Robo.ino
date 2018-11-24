@@ -1,3 +1,4 @@
+//download biblioteca VarSpeedServo -> https://github.com/netlabtoolkit/VarSpeedServo
 #include <VarSpeedServo.h>
 
 VarSpeedServo garra;
@@ -5,21 +6,20 @@ VarSpeedServo direita;
 VarSpeedServo esquerda;
 VarSpeedServo base;
 
-
-
 void setup() 
 { 
+  //inicializar porta serial para visualizar retorno do sensor de toque
   Serial.begin(9600);
+  //setar o sensor de toque na porta 2 do arduino
   pinMode(2,INPUT);
 
   Serial.println(digitalRead(2));
-  
+
+  //selecionar os motores nas portas
   garra.attach(9); //motor garra -> garra aberta =  180, fechada = 130
   direita.attach(3); //motor dirteita - elevado = 0, baixo = 80
   esquerda.attach(6); //motor esquerda - elevado = , baixo = 
   base.attach(5); //motor esquerda - elevado = , baixo = 
-
-  
 }
 
   
